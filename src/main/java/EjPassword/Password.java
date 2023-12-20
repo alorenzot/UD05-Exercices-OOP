@@ -4,19 +4,16 @@ public class Password {
     private int length;
     private static int defaultLength = 10;
     private String password;
-    private boolean isStrong;
     private String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRTSUVWXYZ0123456789";
 
 
     public Password() {
         this.length = defaultLength;
         this.password = generatePassword(length);
-        this.isStrong = isStrong();
     }
     public Password(int length) {
         this.length = length;
         this.password = generatePassword(length);
-        this.isStrong = isStrong();
     }
     public boolean isStrong() {
         if (numberChecker(password)+lowerChecker(password)+upperChecker(password)==7) return true;
