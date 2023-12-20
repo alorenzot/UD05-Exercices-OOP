@@ -4,6 +4,8 @@ public class Password {
     private int length;
     private static int defaultLength=10;
     private String password;
+    private String characters="abcdefghijklmopqrstuvwxyzABCDEFGHIJKLMNOPQRTSUVWXYZ0123456789";
+
 
     public Password(){
         this.length=defaultLength;
@@ -22,7 +24,6 @@ public class Password {
         return false;
     }
     public String generatePassword(int length){
-        String characters="abcdefghijklmopqrstuvwxyzABCDEFGHIJKLMNOPQRTSUVWXYZ0123456789";
         String aux="";
         for (int i=0;i<=length;i++){
             int random=(int)(Math.random()*characters.length());
