@@ -11,14 +11,17 @@ public class Password {
         this.length = defaultLength;
         this.password = generatePassword(length);
     }
+
     public Password(int length) {
         this.length = length;
         this.password = generatePassword(length);
     }
+
     public boolean isStrong() {
-        if (numberChecker(password)+lowerChecker(password)+upperChecker(password)==7) return true;
+        if (numberChecker(password) + lowerChecker(password) + upperChecker(password) == 7) return true;
         else return false;
     }
+
     private int numberChecker(String password) {
         int check = 0;
         if (password.length() != 0)
@@ -34,6 +37,7 @@ public class Password {
             }
         return check;
     }
+
     private int lowerChecker(String password) {
         int check = 0;
         if (password.length() != 0)
@@ -47,7 +51,9 @@ public class Password {
                     }
                 }
             }
-        return check;    }
+        return check;
+    }
+
     public int upperChecker(String password) {
         int check = 0;
         if (password.length() != 0)
@@ -61,7 +67,9 @@ public class Password {
                     }
                 }
             }
-        return check;    }
+        return check;
+    }
+
     public String generatePassword(int length) {
         String aux = "";
         for (int i = 0; i < length; i++) {
@@ -70,12 +78,15 @@ public class Password {
         }
         return aux;
     }
+
     public int getLength() {
         return length;
     }
+
     public String getPasswordAndLength() {
         return password + length;
     }
+
     @Override
     public String toString() {
         return password;
