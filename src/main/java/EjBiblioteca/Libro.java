@@ -6,11 +6,10 @@ public class Libro {
     private int ejemplaresDisponibles;
     private int ejemplaresPrestados;
 
-    public Libro(String titulo, String autor, int ejemplaresDisponibles, int ejemplaresPrestados){
+    public Libro(String titulo, String autor, int ejemplaresDisponibles){
         this.titulo=titulo;
         this.autor=autor;
         this.ejemplaresDisponibles=ejemplaresDisponibles;
-        this.ejemplaresPrestados=ejemplaresPrestados;
     }
 
     public String getTitulo() {
