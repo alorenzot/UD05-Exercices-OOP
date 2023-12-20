@@ -131,5 +131,4 @@ public class Persona {
                 "IMC: "+ respuestaIMC(calcularIMC())
                 ;
     }
-
 }

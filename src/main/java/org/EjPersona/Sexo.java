@@ -4,4 +4,5 @@ public enum Sexo {
     Hombre,
     Mujer,
     No_Especificado;
+
 }
