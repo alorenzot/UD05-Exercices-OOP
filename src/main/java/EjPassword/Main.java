@@ -18,7 +18,7 @@ public class Main {
             isStrong[i]=passwords[i].isStrong();
         }
         for (int i=0;i<passwordsQuantity;i++) {
-            System.out.println(passwords[i]);
+            System.out.println("Generated password: " + passwords[i] + ", is strong? " + isStrong[i]);
         }
     }
     private static int askForQuantity() {

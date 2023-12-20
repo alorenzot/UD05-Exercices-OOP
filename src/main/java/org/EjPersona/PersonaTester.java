@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class PersonaTester {
     public static void main(String[] args) {
         Persona[] personas = new Persona[6];
+        System.out.println("Vamos a guardar los datos personales de "+personas.length+" personas.");
+
 
         for (int i = 0; i < personas.length; i++) {
 
@@ -24,15 +26,19 @@ public class PersonaTester {
     public static String setNombre() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce tu nombre: ");
-        String nombre = sc.next();
-        return nombre;
+        if (sc.hasNextInt()) {
+            System.out.println("¿El nombre tiene numeros?");
+            return setNombre();
+        }else return sc.next();
     }
 
     public static String setApellidos() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce tus apellidos: ");
-        String apellidos = sc.nextLine();
-        return apellidos;
+        if (sc.hasNextInt()) {
+            System.out.println("¿Los apellidos tienen numeros?");
+            return setApellidos();
+        }else return sc.nextLine();
     }
 
     public static int setEdad() {

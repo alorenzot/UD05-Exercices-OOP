@@ -78,8 +78,6 @@ public class Password {
     }
     @Override
     public String toString() {
-        return "Your password is: " + password + "\n" +
-                "Is strong: " + isStrong() + "\n"
-                +"\n";
+        return password;
     }
 }
