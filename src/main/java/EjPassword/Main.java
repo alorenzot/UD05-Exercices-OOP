@@ -11,13 +11,13 @@ public class Main {
             passwords[i]=new Password();
         }
         for (Password password: passwords)
-            System.out.println(password);
+            System.out.print(password);
     }
 
     private static int askForQuantity() {
         Scanner sc = new Scanner(System.in);
         if (!sc.hasNextInt()) {
-            System.out.println("Introduce only numbers");
+            System.out.println("Introduce only numbers.");
             return askForQuantity();
         } else {
             return sc.nextInt();
