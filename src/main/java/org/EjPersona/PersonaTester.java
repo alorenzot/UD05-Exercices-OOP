@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class PersonaTester {
     public static void main(String[] args) {
-        Persona[] personas=new Persona[2];
+        Persona[] personas=new Persona[6];
         for (int i=0;i< personas.length;i++){
             System.out.println("Vamos con la " + (i+1) + "ª persona.");
             boolean introduceDNI=Persona.introduceDNI();
