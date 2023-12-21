@@ -27,7 +27,7 @@ public class PersonaTester {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce tu nombre: ");
         if (sc.hasNextInt()) {
-            System.out.println("¿El nombre tiene numeros?");
+            System.err.println("¿El nombre tiene números?");
             return setNombre();
         }else return sc.next();
     }
@@ -36,7 +36,7 @@ public class PersonaTester {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce tus apellidos: ");
         if (sc.hasNextInt()) {
-            System.out.println("¿Los apellidos tienen numeros?");
+            System.err.println("¿Los apellidos tienen números?");
             return setApellidos();
         }else return sc.nextLine();
     }
@@ -45,7 +45,7 @@ public class PersonaTester {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce tu edad: ");
         if (!sc.hasNextInt()) {
-            System.out.println("Introduce un número.");
+            System.err.println("Introduce un número.");
             return setEdad();
         } else return sc.nextInt();
     }
@@ -55,7 +55,7 @@ public class PersonaTester {
         System.out.println("Introduce el DNI: ");
         String respuesta = sc.next();
         if (respuesta.length() != 9) {
-            System.out.println("Debes introducir 8 numeros y una letra.");
+            System.err.println("Debes introducir 8 numeros y una letra.");
             return setDni();
         } else return respuesta;
     }
@@ -72,7 +72,7 @@ public class PersonaTester {
             case 3:
                 return Sexo.No_Especificado;
             default:
-                System.out.println("Introduce una opción válida.");
+                System.err.println("Introduce una opción válida.");
                 return setSexo();
         }
 
@@ -82,7 +82,7 @@ public class PersonaTester {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce tu peso en kg: [65,3]");
         if (!sc.hasNextFloat()) {
-            System.out.println("Introduce solo numeros con coma.");
+            System.err.println("Introduce solo números con coma.");
             return setPeso();
         } else return sc.nextFloat();
     }
@@ -91,7 +91,7 @@ public class PersonaTester {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce tu altura en metros: [1,65]");
         if (!sc.hasNextFloat()) {
-            System.out.println("Introduce solo numeros con coma.");
+            System.err.println("Introduce solo números con coma.");
             return setAltura();
         } else return sc.nextFloat();
     }

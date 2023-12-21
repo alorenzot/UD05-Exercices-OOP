@@ -55,8 +55,8 @@ public class Libro {
     public String toString(){
         return "· Título: " + getTitulo() + "\n" +
                 "    Autor: " + getAutor() + "\n" +
-                "    Ejemplares disponibles: " + "\n" +
-                "    Ejemplares prestados: " + "\n";
+                "    Ejemplares disponibles: " + getEjemplaresDisponibles()+  "\n" +
+                "    Ejemplares prestados: " + getEjemplaresPrestados() + "\n";
     }
 
 
