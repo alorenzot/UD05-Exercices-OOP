@@ -30,5 +30,26 @@ public class Biblioteca {
             cantidadLibrosActuales++;
         }
     }
+    // Método para recuperar/comprobar un libro por parte de su título.
+    // Devolverá la posición en el array de libros del primer libro que coincida si existe, y –1 si no existe.
+
+//    public int comprobarLibro(String busqueda){
+//        int similitud=0;
+//
+//        for (int i=0; i<titulo.length();i++){
+//            for (int j=0; j<busqueda.length();j++){
+//                if (titulo.toLowerCase().charAt(i)==busqueda.toLowerCase().charAt(j)){
+//                    similitud++;
+//                    if (similitud==5){
+//                        return 1;
+//                    }
+//
+//                }
+//                else return -1;
+//            }
+//
+//        }
+//        return
+//    }
 
 }
