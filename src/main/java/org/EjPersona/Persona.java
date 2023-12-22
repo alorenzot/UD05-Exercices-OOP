@@ -31,13 +31,17 @@ public class Persona {
         this.altura = altura;
     }
 
-    public int calcularIMC() {
-        float IMC = peso / (altura * altura);
+    public float getIMC() {
+        return peso / (altura * altura);
+    }
+
+    public int calcularIMC(float IMC) {
         if (IMC < 18.5) return -1;
         if (IMC >= 18.5 && IMC < 25) return 0;
         if (IMC >= 25 && IMC < 30) return 1;
         else return 2;
     }
+
     public String respuestaIMC(int IMC) {
         switch (IMC) {
             case -1:
@@ -128,7 +132,6 @@ public class Persona {
                 "Peso: " + getPeso() + "kg\n" +
                 "Altura: " + getAltura() + "m\n" +
                 "Mayor de edad: " + esMayorDeEdad() + "\n" +
-                "IMC: "+ respuestaIMC(calcularIMC())
-                ;
+                "IMC (" + getIMC() + ") : " + respuestaIMC(calcularIMC(getIMC()));
     }
 }

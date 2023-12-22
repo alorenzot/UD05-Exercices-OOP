@@ -4,9 +4,14 @@ import java.util.Scanner;
 
 public class PersonaTester {
     public static void main(String[] args) {
-        Persona[] personas = new Persona[6];
-        System.out.println("Vamos a guardar los datos personales de " + personas.length + " personas.");
+        Persona[] personas = new Persona[1];
 
+        registrarPersonas(personas);
+        mostrarPersonas(personas);
+    }
+
+    private static void registrarPersonas(Persona[] personas) {
+        System.out.println("Vamos a guardar los datos personales de " + personas.length + " personas.");
 
         for (int i = 0; i < personas.length; i++) {
 
@@ -18,7 +23,9 @@ public class PersonaTester {
             else
                 personas[i] = new Persona(setNombre(), setApellidos(), setEdad());
         }
+    }
 
+    private static void mostrarPersonas(Persona[] personas) {
         for (Persona persona : personas)
             System.out.println(persona);
     }
