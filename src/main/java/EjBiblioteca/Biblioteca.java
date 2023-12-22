@@ -33,7 +33,7 @@ public class Biblioteca {
     // Método para recuperar/comprobar un libro por parte de su título.
     // Devolverá la posición en el array de libros del primer libro que coincida si existe, y –1 si no existe.
 
-//    public int comprobarLibro(String busqueda){
+//    public int comprobarLibro(libros, String busqueda){
 //        int similitud=0;
 //
 //        for (int i=0; i<titulo.length();i++){
