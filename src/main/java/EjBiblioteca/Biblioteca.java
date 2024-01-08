@@ -1,7 +1,7 @@
 package EjBiblioteca;
 
 public class Biblioteca {
-    private int cantidadLibros=100;
+    private int cantidadLibrosMaxima =100;
     private int cantidadLibrosActuales;
     private String nombre;
     private String localizacion;
@@ -10,7 +10,7 @@ public class Biblioteca {
     public Biblioteca(String nombre, String localizacion){
         this.nombre=nombre;
         this.localizacion=localizacion;
-        libros=new Libro[cantidadLibros];
+        libros=new Libro[cantidadLibrosMaxima];
 
         String[][] librosBasicos ={
                 {"Don Quijote de la Mancha", "Miguel de Cervantes Saavedra"},
@@ -30,13 +30,26 @@ public class Biblioteca {
             cantidadLibrosActuales++;
         }
     }
+
+    public boolean agregarLibro(String titulo, String autor, int ejemplares){
+        if (cantidadLibrosActuales >= cantidadLibrosMaxima){
+            return false;
+        } else {
+            libros[cantidadLibrosActuales + 1] = new Libro(titulo, autor, ejemplares);
+            return true;
+        }
+    }
+
+
+
     // Método para recuperar/comprobar un libro por parte de su título.
     // Devolverá la posición en el array de libros del primer libro que coincida si existe, y –1 si no existe.
 
-//    public int comprobarLibro(libros, String busqueda){
+//    public int comprobarLibro(String nombre, String busqueda){
+//
 //        int similitud=0;
 //
-//        for (int i=0; i<titulo.length();i++){
+//        for (int i=0; i<libros[].length;i++){
 //            for (int j=0; j<busqueda.length();j++){
 //                if (titulo.toLowerCase().charAt(i)==busqueda.toLowerCase().charAt(j)){
 //                    similitud++;
