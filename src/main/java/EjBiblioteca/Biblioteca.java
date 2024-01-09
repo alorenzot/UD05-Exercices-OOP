@@ -1,11 +1,12 @@
 package EjBiblioteca;
 
 public class Biblioteca {
-    private int cantidadLibrosMaxima =100;
+    private static int cantidadLibrosMaxima =100;
+    private Libro[] libros;
     private int cantidadLibrosActuales;
     private String nombre;
     private String localizacion;
-    private Libro[] libros;
+
 
     public Biblioteca(String nombre, String localizacion){
         this.nombre=nombre;
@@ -31,38 +32,49 @@ public class Biblioteca {
         }
     }
 
+
+    public int comprobarLibro(String busqueda){
+        int i=0;
+        while(i<cantidadLibrosActuales){
+            if (libros[i].getTitulo().contains(busqueda)) {
+                return i;
+            }
+            i++;
+        }
+        return -1;
+    }
+
     public boolean agregarLibro(String titulo, String autor, int ejemplares){
         if (cantidadLibrosActuales >= cantidadLibrosMaxima){
             return false;
         } else {
-            libros[cantidadLibrosActuales + 1] = new Libro(titulo, autor, ejemplares);
+            libros[cantidadLibrosActuales] = new Libro(titulo, autor, ejemplares);
+            cantidadLibrosActuales++;
             return true;
         }
     }
 
+    public Libro[] reordenarLibros(int indice){
+        Libro[] aux = new Libro[cantidadLibrosMaxima];
+        for (int i = 0; i<indice; i++) {
+            aux[i] = libros[i];
+        }
+        for (int i = indice+1; i<aux.length; i++) {
+            aux[i] = libros[i];
+        }
+        cantidadLibrosActuales--;
+        return libros = aux;
 
 
-    // Método para recuperar/comprobar un libro por parte de su título.
-    // Devolverá la posición en el array de libros del primer libro que coincida si existe, y –1 si no existe.
+    }
+    public boolean eliminarLibro(String titulo){
+        if (comprobarLibro(titulo)==-1) return false;
 
-//    public int comprobarLibro(String nombre, String busqueda){
-//
-//        int similitud=0;
-//
-//        for (int i=0; i<libros[].length;i++){
-//            for (int j=0; j<busqueda.length();j++){
-//                if (titulo.toLowerCase().charAt(i)==busqueda.toLowerCase().charAt(j)){
-//                    similitud++;
-//                    if (similitud==5){
-//                        return 1;
-//                    }
-//
-//                }
-//                else return -1;
-//            }
-//
-//        }
-//        return
-//    }
+        else reordenarLibros(comprobarLibro(titulo));
+        return true;
+    }
 
+    public int getCantidadLibrosActuales() {
+        return cantidadLibrosActuales;
+    }
 }
