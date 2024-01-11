@@ -124,10 +124,16 @@ public class Biblioteca {
     }
     @Override
     public String toString(){
-        return "Nombre de la Biblioteca: " + nombre + "\n" +
-                "Localización: " + localizacion + "\n" +
-                "Libros disponibles: " + getCantidadLibrosActuales() + "\n" +
-                "Lista de libros: " + "\n" +
-                mostrarLibros();
+        if (getCantidadLibrosActuales()==0) {
+            return "Nombre de la Biblioteca: " + nombre + "\n" +
+                    "Localización: " + localizacion + "\n" +
+                    "¡No hay libros disponibles en esta biblioteca!";
+        }else {
+            return "Nombre de la Biblioteca: " + nombre + "\n" +
+                    "Localización: " + localizacion + "\n" +
+                    "Libros disponibles: " + getCantidadLibrosActuales() + "\n" +
+                    "Lista de libros: " + "\n" +
+                    mostrarLibros();
+        }
     }
 }

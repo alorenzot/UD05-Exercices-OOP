@@ -25,6 +25,16 @@ public class BibliotecaTester {
         b2.prestamo("Cien años");
         b2.devolucion("Cien años");
 
+        /* TEST PARA ELIMINAR TODOS LOS LIBROS
+        b2.eliminarLibro("Cien");
+        b2.eliminarLibro("alquimista");
+        b2.eliminarLibro("poemas");
+        b2.eliminarLibro("perros");
+        b2.eliminarLibro("Desola");
+        b2.eliminarLibro("Rayue");
+        b2.eliminarLibro("Aleph");
+        */
+
         System.out.println(b1);
         System.out.println(b2);
     }
