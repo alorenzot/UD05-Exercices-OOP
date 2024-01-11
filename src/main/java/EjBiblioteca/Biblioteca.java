@@ -1,5 +1,7 @@
 package EjBiblioteca;
 
+import java.util.Arrays;
+
 public class Biblioteca {
     private static int cantidadLibrosMaxima = 100;
     private Libro[] libros;
@@ -109,16 +111,23 @@ public class Biblioteca {
         return localizacion;
     }
 
+
+    //TODO NO ENTIENDO NADA
+    private String mostrarLibros() {
+        String aux="";
+        Boolean stop=false;
+        for (int i=0;i<libros.length && stop==false;i++) {
+            if (libros[i]== null) stop=true;
+            else aux += libros[i];
+        }
+        return aux;
+    }
     @Override
     public String toString(){
-        return "Nombre de la Biblioteca: " + getNombre() + "\n" +
-                "Localización: " + getLocalizacion() + "\n" +
+        return "Nombre de la Biblioteca: " + nombre + "\n" +
+                "Localización: " + localizacion + "\n" +
                 "Libros disponibles: " + getCantidadLibrosActuales() + "\n" +
                 "Lista de libros: " + "\n" +
                 mostrarLibros();
-    }
-    //TODO NO ENTIENDO NADA
-    private String mostrarLibros() {
-        return this.libros.toString();
     }
 }

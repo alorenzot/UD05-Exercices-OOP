@@ -53,10 +53,10 @@ public class Libro {
 
     @Override
     public String toString(){
-        return "   Título: " + getTitulo() + "\n" +
-                "    Autor: " + getAutor() + "\n" +
-                "    Ejemplares disponibles: " + getEjemplaresDisponibles()+  "\n" +
-                "    Ejemplares prestados: " + getEjemplaresPrestados() + "\n";
+        return "\n  * Título: " + titulo + "\n" +
+                "    Autor: " + autor + "\n" +
+                "    Ejemplares disponibles: " + ejemplaresDisponibles+  "\n" +
+                "    Ejemplares prestados: " + ejemplaresPrestados + "\n";
     }
 
 
